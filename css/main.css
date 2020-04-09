@@ -146,6 +146,10 @@ a.box {
     height: 16em;
 }
 
+.box h3 {
+    text-align: center;
+}
+
 .box:hover {
     border: 1px solid var(--extra-woody);
 }

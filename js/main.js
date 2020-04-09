@@ -35,6 +35,8 @@ function magnetScroll() {
     requestAnimationFrame(magnetScroll);
 }
 
+let bak = {};
+
 function flip() {
     function toggleClass(id, cls) {
         let elem;
@@ -46,6 +48,18 @@ function flip() {
     }
     toggleClass(".page-cover", "flip");
     toggleClass("#avatar", "flip");
+    let switc = document.querySelector("#light-mode-switch");
+    let descr = document.querySelector("#light-mode-descr");
+    if (descr.innerHTML == "") {
+        switc.innerHTML = bak.switc;
+        descr.innerHTML = bak.descr;
+    } else {
+        bak.switc = switc.innerHTML;
+        bak.descr = descr.innerHTML;
+        switc.innerHTML = "Actually,<br />I prefer light mode";
+        descr.innerHTML = "";
+    }
+    
 }
 
 window.addEventListener("load", () => {
